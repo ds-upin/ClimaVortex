@@ -1,4 +1,4 @@
-let city = "delhi";
+let city = "Dehli";
 function defaultCall(place){
 	const url = `https://weather-api138.p.rapidapi.com/weather?city_name=${place}`;
 	async function apicall(){
