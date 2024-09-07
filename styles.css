@@ -50,9 +50,10 @@ h2{
     height: 100%;
     width: 30%;
     height:80%;
-    background-color: rgb(50, 151, 240);
+    
     margin-left: 1em;
     margin-right: 1em;
+    padding-left: 5px;
     display:flex;
     border-radius: 10px 10px 10px 10px;
 }
