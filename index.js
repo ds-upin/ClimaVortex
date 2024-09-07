@@ -42,12 +42,6 @@ function defaultCall(place){
 		pres.innerText = `Pressure: ${res.main.pressure}mb`;
 		let wind_speed =  document.getElementById('w-speed');
 		wind_speed.innerText = `Wind Speed: ${res.wind.speed}m/s`;
-		let sunrise = document.getElementById('sunrise');
-		let date = new Date(res.sys.sunrise*1000);
-
-		sunrise.innerText= `Sunrise: ${date.toUTCString()}}`;
-		let sunset = document.getElementById('sunset');
-		sunset.innerText = `Sunset: ${3+2}`;
 		let visible = document.getElementById('visible');
 		visible.innerText = `Visibility: ${(res.visibility/1000).toPrecision(2)}Km`;
 		let w_dir = document.getElementById('w-dir');
