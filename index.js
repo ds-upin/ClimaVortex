@@ -1,9 +1,8 @@
-let city = document.cookie;
-if(document.cookie=="")
+let city="Delhi";
+if(document.cookie!="")
 {
-	city="Delhi";
+	city=document.cookie;
 }
-
 function defaultCall(place){
 	const url = `https://weather-api138.p.rapidapi.com/weather?city_name=${place}`;
 	async function apicall(){
