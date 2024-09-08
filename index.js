@@ -41,7 +41,7 @@ function defaultCall(place){
 		let pres = document.getElementById('pres');
 		pres.innerText = `Pressure: ${res.main.pressure}mb`;
 		let wind_speed =  document.getElementById('w-speed');
-		wind_speed.innerText = `Wind Speed: ${res.wind.speed}m/s`;
+		wind_speed.innerText = `Wind Speed: ${res.wind.speed}Km/hr`;
 		let visible = document.getElementById('visible');
 		visible.innerText = `Visibility: ${(res.visibility/1000).toPrecision(2)}Km`;
 		let w_dir = document.getElementById('w-dir');
