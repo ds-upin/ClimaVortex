@@ -1,28 +1,22 @@
 let city="Delhi";
-if(document.cookie!="")
-{
-	city=document.cookie;
-}
 function defaultCall(place){
 	const url = `https://weather-api138.p.rapidapi.com/weather?city_name=${place}`;
 	async function apicall(){
-	const options = {
-		method: 'GET',
-		headers: {
-			'x-rapidapi-key': '7188c03851msh4b16f9e304fdae0p11d310jsn01023b63e3fc',
-			'x-rapidapi-host': 'weather-api138.p.rapidapi.com'
+		const options = {
+			method: 'GET',
+			headers: {
+				'x-rapidapi-key': '7188c03851msh4b16f9e304fdae0p11d310jsn01023b63e3fc',
+				'x-rapidapi-host': 'weather-api138.p.rapidapi.com'
+			}
+		};
+		try {
+			const response = await fetch(url, options);
+			const result = await response.json();
+			return result;
+		} 
+		catch (error) {
+			console.error(error);
 		}
-	};
-	
-	try {
-		const response = await fetch(url, options);
-		const result = await response.json();
-		//console.log(result);
-		return result;
-	} catch (error) {
-		console.error(error);
-	}
-	
 	}
 	apicall()
 	  .then(res =>{
@@ -85,7 +79,7 @@ function defaultCall(place){
 		w_dir.innerText = `Wind Direction: ${direction}`;
 	  })
 	  .catch(error => {
-		window.alert("City not found");
+		window.alert("City not found or network error!");
 		console.error('Error handling fetchData:', error);
 	  });
 	  
@@ -95,9 +89,6 @@ defaultCall(city);
 const btn = document.getElementById('btn');
 function callapiagain(){
 	let text = document.getElementById('city').value;
-	document.cookie=text;
 	defaultCall(text);
 }
-
 btn.addEventListener('click',callapiagain);
-// added comment
